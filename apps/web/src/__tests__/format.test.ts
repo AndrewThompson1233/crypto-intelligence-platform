@@ -13,17 +13,17 @@ describe("format helpers", () => {
 
   it("formats USD", () => {
     expect(formatUsd("1234.5")).toBe("$1,234.50");
-    expect(formatUsd(null)).toBe("—");
+    expect(formatUsd(null)).toBe("-");
   });
 
   it("formats decimals with bounded digits", () => {
     expect(formatDecimal("1.234567891234", 4)).toBe("1.2346");
-    expect(formatDecimal("")).toBe("—");
+    expect(formatDecimal("")).toBe("-");
   });
 
   it("formats ISO timestamps", () => {
     expect(formatTimestamp("2026-07-09T12:00:00Z")).toMatch(/2026/);
-    expect(formatTimestamp(null)).toBe("—");
+    expect(formatTimestamp(null)).toBe("-");
   });
 
   it("maps risk to badge class", () => {

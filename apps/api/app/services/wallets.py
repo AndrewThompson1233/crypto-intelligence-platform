@@ -42,7 +42,7 @@ async def create_wallet(
     try:
         balance = await provider.fetch_balance(chain, normalized.address)
     except ProviderError:
-        # Tolerate provider failure at creation time — user can retry sync later.
+        # Tolerate provider failure at creation time - user can retry sync later.
         balance = None
 
     wallet = Wallet(

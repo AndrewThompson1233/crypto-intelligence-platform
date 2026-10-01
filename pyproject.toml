@@ -81,7 +81,7 @@ ignore = [
   "RUF059",   # unpacked variable never used (we destructure for clarity)
   "SIM102",   # nested if collapse hurts readability
   "UP047",    # type parameters syntax requires Python 3.12+ strict mode; legacy syntax is fine
-  "E402",     # module-level import not at top — needed for sys.path bootstrap in bot/worker entrypoints
+  "E402",     # module-level import not at top - needed for sys.path bootstrap in bot/worker entrypoints
 ]
 
 [tool.ruff.lint.per-file-ignores]

@@ -5,16 +5,16 @@ export function shortenAddress(address: string, prefix = 6, suffix = 4): string 
 }
 
 export function formatDecimal(value: string | number | null | undefined, maxDigits = 6): string {
-  if (value === null || value === undefined || value === "") return "—";
+  if (value === null || value === undefined || value === "") return "-";
   const n = typeof value === "string" ? Number.parseFloat(value) : value;
-  if (!Number.isFinite(n)) return "—";
+  if (!Number.isFinite(n)) return "-";
   return n.toLocaleString("en-US", { maximumFractionDigits: maxDigits });
 }
 
 export function formatUsd(value: string | number | null | undefined): string {
-  if (value === null || value === undefined || value === "") return "—";
+  if (value === null || value === undefined || value === "") return "-";
   const n = typeof value === "string" ? Number.parseFloat(value) : value;
-  if (!Number.isFinite(n)) return "—";
+  if (!Number.isFinite(n)) return "-";
   return n.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
@@ -23,9 +23,9 @@ export function formatUsd(value: string | number | null | undefined): string {
 }
 
 export function formatTimestamp(ts: string | null | undefined): string {
-  if (!ts) return "—";
+  if (!ts) return "-";
   const d = new Date(ts);
-  if (Number.isNaN(d.getTime())) return "—";
+  if (Number.isNaN(d.getTime())) return "-";
   return d.toLocaleString("en-US", {
     year: "numeric",
     month: "short",
